@@ -1,0 +1,53 @@
+.slider-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.card {
+  flex: 0 0 auto;
+  width: 80%; /* Alterado para ser responsivo */
+  max-width: 250px; /* Largura máxima dos cards */
+  height: 200px; /* Altura ajustável */
+  margin: 0 10px;
+  scroll-snap-align: start;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #e20000;
+}
+
+.prev,
+.next {
+  display: none; /* Inicialmente, esconde os botões de navegação */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  z-index: 1;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+/* Media query para exibir os botões de navegação apenas em telas menores que 1280px */
+@media screen and (max-width: 1280px) {
+  .prev,
+  .next {
+    display: block;
+  }
+}
+
